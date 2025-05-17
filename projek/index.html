@@ -26,14 +26,61 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#menu">Menu</a>
+            <a href="#products">Product</a>
             <a href="#contact">Kontak</a>
         </div>
 
         <div class="navbar-extra">
-            <a href="#" id="search"><i data-feather="search"></i></a>
-            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="search-button"><i data-feather="search"></i></a>
+            <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
             <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
         </div>
+
+        <!-- Search form start -->
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box"><i data-feather="search"></i></label>
+        </div>
+
+        <!-- Search form end -->
+
+     <!-- Shopping Cart Start -->
+        <div class="shopping-card">
+        <div class="cart-item">
+            <img src="images/products.jpg" alt="Product 1">
+            <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 30K</div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+            <img src="images/products.jpg" alt="Product 1">
+            <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 30K</div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+            <img src="images/products.jpg" alt="Product 1">
+            <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 30K</div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+            <img src="images/products.jpg" alt="Product 1">
+            <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 30K</div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        </div>
+        <!-- Shopping Cart End -->
+
     </nav>
     <!-- navbar end -->
 
@@ -70,7 +117,7 @@
     <!-- menu menu start -->
      <section id="menu" class="menu">
         <h2><span>Menu</span>kami</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, omnis accusantium! Provident numquam laudantium nemo?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit suscipit reiciendis aperiam nihil reprehenderit aliquam?</p>
 
         <div class="row">
             <div class="menu-card"> 
@@ -98,6 +145,59 @@
 
     <!-- menu menu end -->
 
+    <!-- products section start -->
+     <section class="products" id="products">
+        <h2><span>Bungkus Disini</span> Mbak'ee</h2>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate nemo voluptatum, natus officia voluptatem?</p>
+
+         <div class="row">
+            <div class="product-card">
+                <div class="product-icons">
+                    <a href="#"><i data-feather="shopping-cart"></i></a>
+                    <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+                </div>
+
+                <div class="product-img">
+                    <img src="images/products.jpg" alt="Product 1">
+                </div>
+                <div class="product-content">
+                    <h3>Coffe Beans 1 </h3>
+                    <div class="product-stars">
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                    </div>
+                    <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icons">
+                    <a href="#"><i data-feather="shopping-cart"></i></a>
+                    <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+                </div>
+
+                <div class="product-img">
+                    <img src="images/products.jpg" alt="Product 1">
+                </div>
+                <div class="product-content">
+                    <h3>Coffe Beans 1 </h3>
+                    <div class="product-stars">
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                        <i data-feather="star"></i>
+                    </div>
+                    <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+                </div>
+            </div>
+         </div>
+     </section>
+
+    <!-- products section end -->
+
     <!-- contact section start -->
      <section id="contact" class="contact">
         <h2><span>Contact</span>Us</h2>
@@ -121,8 +221,6 @@
 
                 <button class="btn">kirim pesar</button>
             </form>
-
-
         </div>
      </section>
     <!-- contact section end -->
@@ -147,11 +245,36 @@
             <p>Created by <a href="#">BaimKasim</a>. | @copy; 2023</p>
         </div>
      </footer>
-
-
     <!-- footer section end -->
 
 
+    <!-- modal box item detail start -->
+     <!-- Modal box item detail start -->
+<div class="modal" id="item-detail-modal">
+  <div class="modal-container">
+    <a href="#" class="close-icon"><i data-feather="x"></i></a>
+    <div class="modal-content">
+      <img src="images/products.jpg" alt="Product 1">
+      <div class="product-content">
+        <h3>Product 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sint odit animi labore qui magnam saepe suscipit, similique et! Explicabo magnam corrupti iusto sit esse.</p>
+        <div class="product-stars">
+          <i data-feather="star"></i>
+          <i data-feather="star"></i>
+          <i data-feather="star"></i>
+          <i data-feather="star"></i>
+          <i data-feather="star"></i>
+        </div>
+        <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+        <a href="#"><i data-feather="shopping-cart"></i> <span>Add to cart</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal box item detail end -->
+
+
+    <!-- modal box item detail end -->
 
     <!-- faether icon -->
     <script>

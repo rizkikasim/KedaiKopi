@@ -86,6 +86,94 @@ body {
     display: none;
 }
 
+/* navbar search form */
+.navbar .search-form{
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+}
+
+.navbar .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: #0101;
+    padding: 1rem;
+}
+
+.navbar .search-form.active{
+    transform: scaleY(1);
+}
+
+.navbar .search-form label{
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: #000;
+}
+
+/* end */
+
+/* Shoping Card */
+.shopping-card{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 100vh;
+    width: 35rem;
+    padding: 0 1.5rem;
+    background-color: #fff;
+    color: #000;transition: 0.3s;
+}
+
+.shopping-card.active{
+    right: none;
+}
+
+.shopping-card .cart-item{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #666;
+    position: relative;
+}
+
+.shopping-card img{
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.shopping-card h3{
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+}
+
+.shopping-card .item-price{
+    font-size: 1.2rem;
+}
+
+.shopping-card .remove-item{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.shopping-card .remove-item:hover{
+    color: var(--primary);
+}
+
+/* Shoping end */
+
 
 /* Hero Section */
 .hero {
@@ -122,6 +210,16 @@ body {
     color: #fff;
     text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
     line-height: 1.2;
+    width: 20ch;
+    overflow: hidden;
+    text-wrap: nowrap;
+    animation: typing 2s steps(20) infinite alternate-reverse;
+}
+
+@keyframes typing {
+    from {
+        width: 0ch;
+    }
 }
 
 .hero .content h1 span{
@@ -150,11 +248,11 @@ body {
 
 
 /* About section */
-.about, .menu, .contact{
+.about, .menu, .contact, .products{
     padding: 10rem 7% 1.4rem;
 }
 
-.about h2, .menu h2, .contact h2{
+.about h2, .menu h2, .contact h2, .products h2{
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
@@ -162,7 +260,8 @@ body {
 
 .about h2 span,
 .menu h2 span,
-.contact h2 span{
+.contact h2 span, 
+.products h2 span{
     color: var(--primary);
 }
 
@@ -195,6 +294,8 @@ body {
     line-height: 1.3;
 
 }
+
+
 
 /* menu section*/
 .menu h2{
@@ -232,6 +333,91 @@ body {
 .menu .row .menu-card .menu-card-title{
     margin: 1rem auto 1rem;
 }
+
+/* products section */
+.products p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+  text-align: center;
+  color: #ccc;
+}
+
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+
+.products .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.products .product-icons a {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #fff;
+  background-color: #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.products .product-icons a:hover {
+  background-color: #333;
+}
+
+.products .product-img img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.products .product-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.products .product-stars i {
+  color: gold;
+  margin: 0 0.1rem;
+}
+
+.products .product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: normal;
+  color: #999;
+  margin-left: 0.5rem;
+}
+
+
 
 /* Contact Section */
 .contact .row{
@@ -316,6 +502,78 @@ footer .credit a{
     color: black;
     font-weight: 700;
 }
+
+/* Modal Box start */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container{
+    position: relative;
+    background-color: #fefefe;
+    color: #000;
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 80%;
+    animation: animateModal 0.5s;
+}
+
+/* Modal animation */
+@keyframes animateModal{
+    from{
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.modal-container .close-icon {
+    position: absolute;
+    right: 1rem;
+}
+
+.modal-content{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal-content img {
+    height: 20rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-content p{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.2rem;
+}
+
+.modal-content a{
+    display: flex;
+    gap: 1rem;
+    width: 12rem;
+    background-color: var(--primary);
+    color: #fff;
+    margin-top: 1rem;
+    padding: 1rem 1.6rem;
+}
+
+
+/* Modal Box end */
 
 
 /* media Queris */
@@ -412,6 +670,10 @@ footer .credit a{
 
     .contact .row form{
         padding-top: 0;
+    }
+
+    .modal-content{
+        flex-wrap: wrap;
     }
 }
 
